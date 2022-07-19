@@ -2,6 +2,7 @@ package org.esisalama.mobile.project.mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
+    private Button butonLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login(String matricule, String password) {
         progressBar.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.INVISIBLE);
-        progressBar.setVisibility(View.GONE);
+        butonLogin.setEnabled(false);
+//        progressBar.setVisibility(View.INVISIBLE);
+//        progressBar.setVisibility(View.GONE);
+
+        SharedPreferences session = getSharedPreferences("session", 0);
+        session.edit().putBoolean("session_active", true).apply();
     }
 }
