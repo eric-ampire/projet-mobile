@@ -55,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     private void login(String matricule, String password) {
         progressBar.setVisibility(View.VISIBLE);
         butonLogin.setEnabled(false);
-//        progressBar.setVisibility(View.INVISIBLE);
-//        progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(View.INVISIBLE);
+       progressBar.setVisibility(View.GONE);
 
         SharedPreferences session = getSharedPreferences("session", 0);
         session.edit().putBoolean("session_active", true).apply();
