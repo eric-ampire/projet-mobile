@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".ModifierProfileActivity">
 
     <LinearLayout
         android:gravity="center"
@@ -13,25 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/editTextMatricule"
-            android:layout_marginBottom="16dp"
-            android:hint="Matricule"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
 
         <EditText
-            android:id="@+id/edittext_password"
-            android:hint="Mot de passe"
+            android:id="@+id/edittext_password_ancien"
+            android:hint="Ancien Mot de passe"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <EditText
+            android:id="@+id/edittext_password_nouveau"
+            android:hint="Nouveau Mot de passe"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_password_confirmer"
+            android:hint="Confirmer Mot de passe"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/button_login"
+            android:id="@+id/modfier"
             android:layout_marginTop="40dp"
-            android:text="Se connecter"
+            android:text="Modifier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
