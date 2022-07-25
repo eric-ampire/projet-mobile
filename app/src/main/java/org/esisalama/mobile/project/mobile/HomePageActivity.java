@@ -24,49 +24,44 @@ public class HomePageActivity extends AppCompatActivity {
 
         public void verifierSession() {
             //creation de la session
-            SharedPreferences session = getSharedPreferences("session", 0);
-
-            boolean sessionActivity = session.getBoolean("sessionActivity", false);
-            int userId = session.getInt("session_Id", -1);
+            SharedPreferences session = getSharedPreferences("session", MODE_PRIVATE);
+            boolean sessionActivity = session.getBoolean("session_active", false);
 
             if (!sessionActivity) {
                 Intent loginIntent = new Intent(this, LoginActivity.class);
                 startActivity(loginIntent);
                 finish();
             }
-
-            //session.edit().putInt("session_id", 123);
-//        session.edit().putBoolean("session_active", true);
-//        session.edit().commit();
-//
-//        session.edit().putInt("session_activity", false);
         }
         public void configurerButtonProfils(){
-            Button boutonProfile = findViewById(R.id.boutonProfile);
+            Button boutonProfile = findViewById(R.id.btn_profile);
             boutonProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent profilIntent = new Intent(HomePageActivity.this, ProfilActivity.class);
+                    startActivity(profilIntent);
                 }
             });
         }
 
         public void configurerButtonListeTravail(){
-            Button listBouton = findViewById(R.id.boutonListedoc);
+            Button listBouton = findViewById(R.id.btn_liste_travail);
             listBouton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent listIntent = new Intent(HomePageActivity.this, ListeTravailActivity.class);
+                    startActivity(listIntent);
                 }
             });
         }
 
         public void configurerButtonAjout(){
-            Button butonAjout = findViewById(R.id.boutonAjoutDoc);
+            Button butonAjout = findViewById(R.id.btn_ajout_travail);
             butonAjout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent ajoutIntent = new Intent(HomePageActivity.this, AjouterTravailActivity.class);
+                    startActivity(ajoutIntent);
                 }
             });
         }

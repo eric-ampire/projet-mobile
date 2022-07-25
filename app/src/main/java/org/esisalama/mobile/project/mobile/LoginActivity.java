@@ -23,11 +23,11 @@ public class LoginActivity extends AppCompatActivity {
         EditText edMatricule = findViewById(R.id.editTextMatricule);
         EditText edPassword = findViewById(R.id.edittext_password);
 
-        Button boutonLogin = findViewById(R.id.button_login);
+        butonLogin = findViewById(R.id.button_login);
         progressBar = findViewById(R.id.progress_bar);
 
         // 16AB005
-        boutonLogin.setOnClickListener(new View.OnClickListener() {
+        butonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String matricule = edMatricule.getText().toString();
@@ -55,10 +55,11 @@ public class LoginActivity extends AppCompatActivity {
     private void login(String matricule, String password) {
         progressBar.setVisibility(View.VISIBLE);
         butonLogin.setEnabled(false);
-        progressBar.setVisibility(View.INVISIBLE);
-       progressBar.setVisibility(View.GONE);
 
-        SharedPreferences session = getSharedPreferences("session", 0);
-        session.edit().putBoolean("session_active", true).apply();
+        SharedPreferences session = getSharedPreferences("session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = session.edit();
+        editor.putBoolean("session_active", true).apply();
+
+
     }
 }
